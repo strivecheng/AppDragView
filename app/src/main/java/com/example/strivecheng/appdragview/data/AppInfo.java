@@ -10,10 +10,10 @@ package com.example.strivecheng.appdragview.data;
 public class AppInfo {
     private String Code;
     private String Title;
-    private String Image;
+    private int Image;
     private boolean IsSelect;
 
-    public AppInfo(String title, String image, boolean isSelect,String code) {
+    public AppInfo(String title, int image, boolean isSelect,String code) {
         Title = title;
         Image = image;
         IsSelect = isSelect;
@@ -36,11 +36,11 @@ public class AppInfo {
         Title = title;
     }
 
-    public String getImage() {
+    public int getImage() {
         return Image;
     }
 
-    public void setImage(String image) {
+    public void setImage(int image) {
         Image = image;
     }
 

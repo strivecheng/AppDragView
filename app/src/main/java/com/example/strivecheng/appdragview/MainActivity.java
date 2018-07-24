@@ -35,9 +35,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private RecyclerView allAppRv;
     private AllAppItemAdapter allAppItemAdapter;
-    /** 我的应用数据源*/
+    /**
+     * 我的应用数据源
+     */
     private ArrayList<AppInfo> myAppInfos = new ArrayList<>();
-    /** 所有应用数据源，带分组头*/
+    /**
+     * 所有应用数据源，带分组头
+     */
     private ArrayList<AllAppSection> allAppSections = new ArrayList<>();
     private RecyclerView myAppRv;
     private MyAppDragAdapter myAppDragAdapter;
@@ -58,7 +62,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void initView() {
 
-        myAppLlt =  findViewById(R.id.my_app_llt);
+        myAppLlt = findViewById(R.id.my_app_llt);
         cancelBtn = findViewById(R.id.cancel_btn);
         finishBtn = findViewById(R.id.finish_btn);
 
@@ -77,7 +81,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         editAppBtn = headerView.findViewById(R.id.edit_my_app_btn);
 
         RecyclerView horizonRv = headerView.findViewById(R.id.my_app_simple_horizon_rv);
-        horizonRv.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false));
+        horizonRv.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
         horizonRv.setAdapter(new MyAppSimpleHorizonAdapter(myAppInfos));
         allAppItemAdapter.setHeaderView(headerView);
 
@@ -172,6 +176,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     /**
      * 判断是否在我的app里面
+     *
      * @param code
      * @param appInfos
      * @return
@@ -190,6 +195,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     /**
      * 从所有数据源找出
+     *
      * @param code
      * @param allAppSections
      * @return
@@ -213,45 +219,45 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private List<AppInfo> getMyAppData() {
-        myAppInfos.add(new AppInfo("公告", "", true, "GG"));
-        myAppInfos.add(new AppInfo("日程", "", true, "RC"));
-        myAppInfos.add(new AppInfo("汇报", "", true, "HB"));
-        myAppInfos.add(new AppInfo("文件", "", true, "WJ"));
-        myAppInfos.add(new AppInfo("项目跟踪", "", true, "XMZZ"));
+        myAppInfos.add(new AppInfo("公告", R.mipmap.notice_icon, true, "GG"));
+        myAppInfos.add(new AppInfo("日程", R.mipmap.rc_icon, true, "RC"));
+        myAppInfos.add(new AppInfo("汇报", R.mipmap.work_report_icon, true, "HB"));
+        myAppInfos.add(new AppInfo("文件", R.mipmap.wj_icon, true, "WJ"));
+        myAppInfos.add(new AppInfo("项目跟踪", R.mipmap.xmgz_icon, true, "XMZZ"));
         return myAppInfos;
     }
 
     private List<AllAppSection> getData() {
         allAppSections.add(new AllAppSection(true, "通用"));
-        allAppSections.add(new AllAppSection(new AppInfo("公告", "", true, "GG")));
-        allAppSections.add(new AllAppSection(new AppInfo("日程", "", true, "RC")));
-        allAppSections.add(new AllAppSection(new AppInfo("汇报", "", true, "HB")));
-        allAppSections.add(new AllAppSection(new AppInfo("文件", "", true, "WJ")));
-        allAppSections.add(new AllAppSection(new AppInfo("项目跟踪", "", true, "XMZZ")));
+        allAppSections.add(new AllAppSection(new AppInfo("公告", R.mipmap.notice_icon, true, "GG")));
+        allAppSections.add(new AllAppSection(new AppInfo("日程", R.mipmap.rc_icon, true, "RC")));
+        allAppSections.add(new AllAppSection(new AppInfo("汇报", R.mipmap.work_report_icon, true, "HB")));
+        allAppSections.add(new AllAppSection(new AppInfo("文件", R.mipmap.wj_icon, true, "WJ")));
+        allAppSections.add(new AllAppSection(new AppInfo("项目跟踪", R.mipmap.xmgz_icon, true, "XMZZ")));
 
 
         allAppSections.add(new AllAppSection(true, "继续教育"));
-        allAppSections.add(new AllAppSection(new AppInfo("培训计划", "", false, "PXJH")));
-        allAppSections.add(new AllAppSection(new AppInfo("培训报名", "", false, "PXBM")));
-        allAppSections.add(new AllAppSection(new AppInfo("培训签到", "", false, "PXQD")));
-        allAppSections.add(new AllAppSection(new AppInfo("微课堂", "", false, "WKT")));
-        allAppSections.add(new AllAppSection(new AppInfo("操作考核", "", false, "CZKH")));
+        allAppSections.add(new AllAppSection(new AppInfo("培训计划", R.mipmap.pxjh_icon, false, "PXJH")));
+        allAppSections.add(new AllAppSection(new AppInfo("培训报名", R.mipmap.pxbm_icon, false, "PXBM")));
+        allAppSections.add(new AllAppSection(new AppInfo("培训签到", R.mipmap.pxqd_icon, false, "PXQD")));
+        allAppSections.add(new AllAppSection(new AppInfo("微课堂", R.mipmap.wkt_icon, false, "WKT")));
+        allAppSections.add(new AllAppSection(new AppInfo("操作考核", R.mipmap.operation_exam_icon, false, "CZKH")));
 
 
         allAppSections.add(new AllAppSection(true, "实习生管理"));
-        allAppSections.add(new AllAppSection(new AppInfo("实习生档案", "", false, "SXSDA")));
-        allAppSections.add(new AllAppSection(new AppInfo("培训计划", "", false, "S_PXJH")));
-        allAppSections.add(new AllAppSection(new AppInfo("培训报名", "", false, "S_PXBM")));
-        allAppSections.add(new AllAppSection(new AppInfo("培训签到", "", false, "S_PXQD")));
-        allAppSections.add(new AllAppSection(new AppInfo("通知公告", "", false, "TZGG")));
-        allAppSections.add(new AllAppSection(new AppInfo("奖惩信息", "", false, "JCXX")));
-        allAppSections.add(new AllAppSection(new AppInfo("考勤管理", "", false, "KQGL")));
-        allAppSections.add(new AllAppSection(new AppInfo("科室评价", "", false, "KSPJ")));
-        allAppSections.add(new AllAppSection(new AppInfo("留院观察", "", false, "LYGC")));
-        allAppSections.add(new AllAppSection(new AppInfo("科室申请", "", false, "KSSQ")));
-        allAppSections.add(new AllAppSection(new AppInfo("实习批次", "", false, "SXPC")));
-        allAppSections.add(new AllAppSection(new AppInfo("院校管理", "", false, "YXGL")));
-        allAppSections.add(new AllAppSection(new AppInfo("宿舍管理", "", false, "SSGL")));
+        allAppSections.add(new AllAppSection(new AppInfo("实习生档案", R.mipmap.sxsdn_icon, false, "SXSDA")));
+        allAppSections.add(new AllAppSection(new AppInfo("培训计划", R.mipmap.s_pxjh_icon, false, "S_PXJH")));
+        allAppSections.add(new AllAppSection(new AppInfo("培训报名", R.mipmap.s_pxbm_icon, false, "S_PXBM")));
+        allAppSections.add(new AllAppSection(new AppInfo("培训签到", R.mipmap.s_pxqd_icon, false, "S_PXQD")));
+        allAppSections.add(new AllAppSection(new AppInfo("通知公告", R.mipmap.tzgg_icon, false, "TZGG")));
+        allAppSections.add(new AllAppSection(new AppInfo("奖惩信息", R.mipmap.jcxx_icon, false, "JCXX")));
+        allAppSections.add(new AllAppSection(new AppInfo("考勤管理", R.mipmap.kqgl_icon, false, "KQGL")));
+        allAppSections.add(new AllAppSection(new AppInfo("科室评价", R.mipmap.kspj_icon, false, "KSPJ")));
+        allAppSections.add(new AllAppSection(new AppInfo("留院观察", R.mipmap.lysq_icon, false, "LYGC")));
+        allAppSections.add(new AllAppSection(new AppInfo("科室申请", R.mipmap.kssq_icon, false, "KSSQ")));
+        allAppSections.add(new AllAppSection(new AppInfo("实习批次", R.mipmap.sxpc_icon, false, "SXPC")));
+        allAppSections.add(new AllAppSection(new AppInfo("院校管理", R.mipmap.yxgl_icon, false, "YXGL")));
+        allAppSections.add(new AllAppSection(new AppInfo("宿舍管理", R.mipmap.ssgl_icon, false, "SSGL")));
         return allAppSections;
     }
 
@@ -277,7 +283,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 finishBtn.setVisibility(View.VISIBLE);
                 cancelBtn.setVisibility(View.VISIBLE);
                 break;
-                default:
+            default:
         }
     }
 }

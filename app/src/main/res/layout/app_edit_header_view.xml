@@ -29,7 +29,8 @@
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/my_app_simple_horizon_rv"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
+        android:layout_weight="1"
         android:layout_height="match_parent"
         android:layout_gravity="center_vertical"
         />

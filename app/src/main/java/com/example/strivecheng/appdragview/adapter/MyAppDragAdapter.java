@@ -24,7 +24,8 @@ public class MyAppDragAdapter extends BaseItemDraggableAdapter<AppInfo,BaseViewH
     @Override
     protected void convert(BaseViewHolder helper, AppInfo item) {
         helper.setText(R.id.app_info_title_tv,item.getTitle())
-        .setImageResource(R.id.small_delete_iv,R.mipmap.delete_icon);
+        .setImageResource(R.id.small_delete_iv,R.mipmap.delete_icon)
+        .setImageResource(R.id.app_info_icon_iv,item.getImage());
         helper.addOnClickListener(R.id.small_delete_iv);
     }
 }

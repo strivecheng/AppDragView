@@ -49,6 +49,7 @@ public class AllAppItemAdapter extends BaseSectionQuickAdapter<AllAppSection,Bas
     protected void convert(BaseViewHolder helper, AllAppSection item) {
         AppInfo appInfo = item.t;
         helper.setText(R.id.app_info_title_tv,appInfo.getTitle());
+        helper.setImageResource(R.id.app_info_icon_iv,appInfo.getImage());
         if (isEditModel) {
             if (appInfo.isSelect()) {
                 helper.setImageResource(R.id.small_delete_iv,R.mipmap.delete_icon);

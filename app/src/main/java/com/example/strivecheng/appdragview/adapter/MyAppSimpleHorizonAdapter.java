@@ -25,6 +25,6 @@ public class MyAppSimpleHorizonAdapter extends BaseQuickAdapter<AppInfo,BaseView
 
     @Override
     protected void convert(BaseViewHolder helper, AppInfo item) {
-        helper.setImageResource(R.id.app_simple_horizon_iv,R.mipmap.notice_icon);
+        helper.setImageResource(R.id.app_simple_horizon_iv,item.getImage());
     }
 }
