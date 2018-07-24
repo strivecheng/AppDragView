@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:padding="10dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal">
+
+
+    <!--<TextView-->
+        <!--android:id="@+id/section_header_title"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="40dp"-->
+        <!--android:text="我的应用(按住拖动调整顺序)"-->
+        <!--android:textSize="18sp"-->
+        <!--android:gravity="center_vertical"-->
+        <!--android:paddingLeft="10dp"-->
+        <!--android:textColor="@color/fontBlack"-->
+        <!--/>-->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="我的应用"
+        android:gravity="center"
+        android:layout_marginRight="10dp"
+        android:textColor="@color/fontBlack"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/my_app_simple_horizon_rv"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        />
+
+    <Button
+        android:id="@+id/edit_my_app_btn"
+        android:layout_width="45dp"
+        android:layout_height="22dp"
+        android:layout_marginLeft="5dp"
+        android:background="@mipmap/edit_app_icon"/>
+
+</LinearLayout>

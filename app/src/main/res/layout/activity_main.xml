@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bgGray"
+    android:orientation="vertical"
+    tools:context="com.example.strivecheng.appdragview.MainActivity">
+
+
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:background="@color/bgWhite">
+
+    <Button
+        android:id="@+id/cancel_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="取消"
+        android:visibility="gone"
+        android:textColor="@color/colorAccent"
+        android:layout_alignParentLeft="true"
+        android:background="@null"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text="我的应用"
+        android:textSize="18sp"
+        android:textColor="@color/fontBlack"
+        android:layout_centerInParent="true"
+        android:gravity="center"/>
+
+    <Button
+        android:id="@+id/finish_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="完成"
+        android:visibility="gone"
+        android:textColor="@color/colorAccent"
+        android:layout_alignParentRight="true"
+        android:background="@null"/>
+
+
+</RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/bgLightGray"/>
+
+    <LinearLayout
+        android:id="@+id/my_app_llt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/section_header_title"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="我的应用(按住拖动调整顺序)"
+            android:textSize="18sp"
+            android:gravity="center_vertical"
+            android:background="@color/bgWhite"
+            android:paddingLeft="10dp"
+            android:textColor="@color/fontBlack"
+            />
+
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/my_app_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/bgWhite"
+            />
+
+
+    </LinearLayout>
+
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/all_app_rv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/bgWhite"
+        />
+
+</LinearLayout>
