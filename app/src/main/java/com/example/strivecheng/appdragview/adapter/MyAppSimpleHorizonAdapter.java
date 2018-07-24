@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * Created by xingcc on 2018/7/24.
  * main function
- *
+ * 顶部横向的适配器
  * @author strivecheng
  */
 
