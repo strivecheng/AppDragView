@@ -7,6 +7,8 @@
     <color name="bgGray">#c6c5c6</color>
     <color name="bgLightGray">#fff5f5f5</color>
     <color name="bgWhite">#ffffff</color>
+    <color name="bgRed">#f54949</color>
+    <color name="btnBlue">#60a8ef</color>
 
 
 </resources>

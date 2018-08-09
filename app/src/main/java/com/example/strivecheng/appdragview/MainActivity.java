@@ -1,5 +1,6 @@
 package com.example.strivecheng.appdragview;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
@@ -131,10 +132,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         allAppItemAdapter.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() {
             @Override
             public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
+                AllAppSection allAppSection = allAppItemAdapter.getItem(position);
+                AppInfo appInfo = null;
+                if (allAppSection != null) {
+                    appInfo = allAppSection.t;
+                }
                 switch (view.getId()) {
                     case R.id.small_delete_iv:
-                        AllAppSection allAppSection = allAppItemAdapter.getItem(position);
-                        AppInfo appInfo = allAppSection.t;
                         if (appInfo != null) {
                             AppInfo info = isContain(appInfo.getCode(), myAppInfos);
                             if (info != null) {
@@ -151,6 +155,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             myAppDragAdapter.notifyDataSetChanged();
                         }
 
+                        break;
+                    case R.id.info_rl:
+                        if (appInfo != null && "QGW".equals(appInfo.getCode())) {
+                            startActivity(new Intent(MainActivity.this, ShopCarActivity.class));
+                        }
                         break;
                     default:
                 }
@@ -234,6 +243,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         allAppSections.add(new AllAppSection(new AppInfo("汇报", R.mipmap.work_report_icon, true, "HB")));
         allAppSections.add(new AllAppSection(new AppInfo("文件", R.mipmap.wj_icon, true, "WJ")));
         allAppSections.add(new AllAppSection(new AppInfo("项目跟踪", R.mipmap.xmgz_icon, true, "XMZZ")));
+        allAppSections.add(new AllAppSection(new AppInfo("去购物", R.mipmap.xmgz_icon, true, "QGW")));
 
 
         allAppSections.add(new AllAppSection(true, "继续教育"));

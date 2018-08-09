@@ -10,7 +10,7 @@
 
 
     <RelativeLayout
-        android:id="@+id/info_rv"
+        android:id="@+id/info_rl"
         android:layout_width="67dp"
         android:layout_height="71dp"
         android:background="@color/bgLightGray"

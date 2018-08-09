@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.mcxtzhang.swipemenulib.SwipeMenuLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:ios="true"
+    app:leftSwipe="true"
+    app:swipeEnable="true"
+
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+
+        <CheckBox
+            android:id="@+id/select_cb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/goods_icon"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="5dp"
+            android:src="@mipmap/ic_launcher" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingLeft="5dp"
+            android:paddingTop="5dp">
+
+            <TextView
+                android:id="@+id/goods_name_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="2"
+                android:minLines="2"
+                android:textColor="@color/fontBlack"
+                tools:text="这是最牛逼的的手机iPhone X这是最牛逼的的手机iPhone X这是最牛逼的的手机iPhone X这是最牛逼的的手机iPhone X" />
+
+            <TextView
+                android:id="@+id/goods_type_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textSize="14sp"
+                tools:text="深灰色" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp">
+
+                <TextView
+                    android:id="@+id/goods_price_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/fontBlack"
+                    tools:text="￥9688" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/shop_add_bg"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/sub_goods_iv"
+                        android:layout_width="25dp"
+                        android:layout_height="match_parent"
+                        android:padding="8dp"
+                        android:src="@mipmap/shop_sub" />
+
+                    <TextView
+                        android:id="@+id/goods_count_et"
+                        android:layout_width="30dp"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:gravity="center"
+                        android:text="2"
+                        android:textColor="@color/fontBlack" />
+
+                    <ImageView
+                        android:id="@+id/add_goods_iv"
+                        android:layout_width="25dp"
+                        android:layout_height="match_parent"
+                        android:padding="8dp"
+                        android:src="@mipmap/shop_add" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+    <Button
+        android:id="@+id/delete_btn"
+        android:layout_width="80dp"
+        android:layout_height="match_parent"
+        android:textColor="@color/bgWhite"
+        android:text="删除"
+        android:textSize="16dp"
+        android:background="@color/bgRed"/>
+
+
+</com.mcxtzhang.swipemenulib.SwipeMenuLayout>

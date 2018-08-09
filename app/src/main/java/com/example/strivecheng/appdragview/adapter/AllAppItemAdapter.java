@@ -49,19 +49,20 @@ public class AllAppItemAdapter extends BaseSectionQuickAdapter<AllAppSection,Bas
     protected void convert(BaseViewHolder helper, AllAppSection item) {
         AppInfo appInfo = item.t;
         helper.setText(R.id.app_info_title_tv,appInfo.getTitle());
-        helper.setImageResource(R.id.app_info_icon_iv,appInfo.getImage());
+        helper.setImageResource(R.id.app_info_icon_iv,appInfo.getImage())
+        .addOnClickListener(R.id.info_rl);
         if (isEditModel) {
             if (appInfo.isSelect()) {
                 helper.setImageResource(R.id.small_delete_iv,R.mipmap.delete_icon);
             }else {
                 helper.setImageResource(R.id.small_delete_iv,R.mipmap.add_icon);
             }
-            helper.setBackgroundColor(R.id.info_rv,ActivityCompat.getColor(mContext,R.color.bgLightGray));
+            helper.setBackgroundColor(R.id.info_rl,ActivityCompat.getColor(mContext,R.color.bgLightGray));
             helper.addOnClickListener(R.id.small_delete_iv);
             helper.setGone(R.id.small_delete_iv,true);
         }else {
             helper.setGone(R.id.small_delete_iv,false);
-            helper.setBackgroundColor(R.id.info_rv,ActivityCompat.getColor(mContext,R.color.bgWhite));
+            helper.setBackgroundColor(R.id.info_rl,ActivityCompat.getColor(mContext,R.color.bgWhite));
 
         }
 
