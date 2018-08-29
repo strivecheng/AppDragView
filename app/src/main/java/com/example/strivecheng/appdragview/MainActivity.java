@@ -157,8 +157,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                         break;
                     case R.id.info_rl:
-                        if (appInfo != null && "QGW".equals(appInfo.getCode())) {
+                        if (appInfo ==null) {
+                            return;
+                        }
+                        if ( "QGW".equals(appInfo.getCode())) {
                             startActivity(new Intent(MainActivity.this, ShopCarActivity.class));
+                        }else  if ("QFZ".equals(appInfo.getCode())){
+                            startActivity(new Intent(MainActivity.this, SectionActivity.class));
                         }
                         break;
                     default:
@@ -244,6 +249,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         allAppSections.add(new AllAppSection(new AppInfo("文件", R.mipmap.wj_icon, true, "WJ")));
         allAppSections.add(new AllAppSection(new AppInfo("项目跟踪", R.mipmap.xmgz_icon, true, "XMZZ")));
         allAppSections.add(new AllAppSection(new AppInfo("去购物", R.mipmap.xmgz_icon, true, "QGW")));
+        allAppSections.add(new AllAppSection(new AppInfo("去分组", R.mipmap.xmgz_icon, true, "QFZ")));
 
 
         allAppSections.add(new AllAppSection(true, "继续教育"));
